@@ -18,3 +18,5 @@ WORKDIR /work
 
 ENV PATH /go_appengine/:$PATH
 ENV GOROOT /go_appengine/goroot/
+
+RUN goapp get google.golang.org/appengine
