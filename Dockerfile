@@ -6,7 +6,7 @@ RUN apt-get update && \
   curl -sL https://deb.nodesource.com/setup_5.x | bash -  && \
   apt-get install -y nodejs && \
   rm -rf /var/lib/apt/lists/* && \
-  mkdir /work && \
+  mkdir /work/ /.gopath/ && \
   wget https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.40.zip -O /gae.zip && \
   unzip /gae.zip && \
   rm -f /gae.zip && \
@@ -18,5 +18,6 @@ WORKDIR /work
 
 ENV PATH /go_appengine/:$PATH
 ENV GOROOT /go_appengine/goroot/
+ENV GOPATH /.gopath/
 
 RUN goapp get google.golang.org/appengine
